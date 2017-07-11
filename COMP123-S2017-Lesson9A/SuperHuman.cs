@@ -6,7 +6,7 @@ using System.Text;
  * Name: Aron Ly
  * Date: July 11, 2017
  * Description: This is the SuperHuman sub class
- * Version: 0.3 - Added Public AddPower Method
+ * Version: 0.4 - Added Public DisplayPowers Method
 */
 namespace COMP123_S2017_Lesson9A
 {
@@ -54,6 +54,12 @@ namespace COMP123_S2017_Lesson9A
         {
             this.Powers.Add(new Power(name, rank));
         }
-
+        public void DisplayPowers()
+        {
+            foreach (var power in Powers)
+            {
+                Console.WriteLine("Name: " + power.Name + " Rank: " + power.Rank);
+            }
+        }
     }
 }
