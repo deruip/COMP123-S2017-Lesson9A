@@ -6,7 +6,7 @@ using System.Text;
  * Name: Aron Ly
  * Date: July 11, 2017
  * Description: This is the SuperHuman sub class
- * Version: 0.2 - Added Private Initialize Method
+ * Version: 0.3 - Added Public AddPower Method
 */
 namespace COMP123_S2017_Lesson9A
 {
@@ -20,10 +20,17 @@ namespace COMP123_S2017_Lesson9A
         private List<Power> _powers;
 
         // Public Properties
+        public List<Power> Powers
+        {
+            get
+            {
+                return this._powers; // returns a reference to the Powers List
+            }
+        }
 
         // Constructors
         public SuperHuman(string name)
-            :base(name)
+            : base(name)
         {
 
         }
@@ -38,5 +45,15 @@ namespace COMP123_S2017_Lesson9A
         }
 
         // Public Methods
+        /// <summary>
+        /// This method adds a power to the Power List
+        /// </summary>
+        /// <param name="name"></param>
+        /// <param name="rank"></param>
+        public void AddPower(string name, int rank)
+        {
+            this.Powers.Add(new Power(name, rank));
+        }
+
     }
 }
